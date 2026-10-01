@@ -1,0 +1,43 @@
+[project]
+name = "dronefly-doc"
+version = "0.1.0"
+description = "Documentation for Dronefly"
+authors = [{ name = "Ben Armstrong", email = "synrg@debian.org" }]
+requires-python = ">=3.11,<3.13"
+readme = "README.md"
+license = "AGPL-3.0-or-later"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "dronefly @ git+https://github.com/dronefly-garden/dronefly.git@main",
+    "furo>=2025.12.19",
+    "Sphinx>=9",
+]
+
+[tool.black]
+target-version = ['py311']
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0,<9.dev0",
+    "pytest-asyncio>=1.4.0,<1.5",
+    "black>=24.3.0,<25",
+    "pre-commit>=4.6.0",
+    "pylint>=2.10.2,<3",
+    "flake8-pyproject>=1.2.4,<2",
+]
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = "E203"
+
+[tool.uv]
+package = false
+default-groups = "all"
+
+[tool.esbonio.sphinx]
+buildCommand = ["sphinx-build", "docs", "_build"]
+pythonCommand = ["uv", "run", "python"]

@@ -48,7 +48,7 @@ it, see the Installation instructions below.
 User Guide - iNaturalist (inatcog)
 ==================================
 
-TODO: migrate Guide for Participant material here.
+TODO: migrate Dronefly bot-related Guide for Participant material here.
 
 ==================
 Server Owner Guide
